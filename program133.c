@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int iLength = 0, iCnt = 0;
+    int *iptr = NULL;
+
+    printf("enter the no of ele :");
+    scanf("%d",&iLength);
+
+    //step 1 : Allocate the memory
+    iptr= (int *)malloc(iLength* sizeof(int));
+
+    if(NULL  == iptr )
+    {
+        printf("unable to allocate memory");
+        return -1;
+    }
+
+    printf("enter the value :\n");
+    
+    for(iCnt = 0; iCnt < iLength; iCnt++)
+    {
+        scanf("%d",&iptr[iCnt]);
+
+    }
+
+    //step 2:  use the memory 
+    //call to the function which contains business logic
+    //Fun(iptr, iLength)
+
+    //step 3: free the memory
+    free(iptr);
+}
